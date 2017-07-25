@@ -1,0 +1,12 @@
+<% include partials/header %>
+
+<h1 style="text-align: center;">Posts</h1>
+
+<% posts.forEach(function(post) { %>
+<div class="post">
+	<h2 class="post-title"><%= post.title %></h2>
+	<p class="post-author">By <%= post.author %></p>
+</div>
+<% }); %>
+
+<% include partials/footer %>

@@ -1,0 +1,22 @@
+body {
+	background-color: goldenrod;
+}
+
+.post {
+	padding: 25px 0;
+	color: darkslategrey;
+}
+
+.post-title {
+	margin: 0;
+}
+
+.post-author {
+	font-size: 10px;
+	color: #fff; 
+	margin: 0;
+}
+
+h1 {
+	color: darkslategrey;
+}
