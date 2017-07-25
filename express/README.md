@@ -30,9 +30,40 @@ Saves the package into our package.json file. Use `npm init` to create a boilerp
     * We pass variables to the ejs page as the second argument of `res.render`. It must be an object. `res.render('home.ejs', {name: username});`
     * We can save a bit of code by letting our router know what type of files we will be serving up, so we don't have to put `.ejs` after every file name: `app.set("view engine", "ejs");`
 
-* Partials
-    * Let's not repeat css on every single view.
-    * We use our main `app.js` file for this: `app.use(express.static("public"));` We created a public folder to hold all of our resources like css. This serves up ALL of the contents of the directory.
-    * Notice so far we are missing all of our html boilerplate (DOCTYPE, html, head, body, etc.). This is where partials come in.
-    * Add a directory called partials to the views directory. Create a 'header.ejs' and 'footer.ejs' file. Add the standard html boilerplate, as well as the links for css, etc. This is known by now. Then in the views we can add `<% include partials/header %>` and `<% include partials/footer %>` at the top and bottom to avoid writing all of that for each page.
-    * Also make sure app.css href begins with a '/'.
+## Partials
+* Let's not repeat css on every single view.
+* We use our main `app.js` file for this: `app.use(express.static("public"));` We created a public folder to hold all of our resources like css. This serves up ALL of the contents of the directory.
+* Notice so far we are missing all of our html boilerplate (DOCTYPE, html, head, body, etc.). This is where partials come in.
+* Add a directory called partials to the views directory. Create a 'header.ejs' and 'footer.ejs' file. Add the standard html boilerplate, as well as the links for css, etc. This is known by now. Then in the views we can add `<% include partials/header %>` and `<% include partials/footer %>` at the top and bottom to avoid writing all of that for each page.
+* Also make sure app.css href begins with a '/'.
+
+## Post
+* Using a form to add friends to a list. want to go to post page then come back to page with updated friends.
+* `app.post("/addfriend", function(req, res) {` instead of `app.get`. Make sure the form's method is POST and it's action is `/addfriend`. Or the corresponding POST url you plan to use.
+* To use the form's data that is sent and convert the req.body into a usable javascript object, we must install body-parser `npm install body-parser --save`.
+* To use body-parser just copy and paste this:
+
+```javascript
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({extended: true}));
+```
+
+* Don't get bogged down with the details yet
+* We don't actually have to use it in the POST request, it just automatically changes it to an object.
+* Now instead of using `res.render` we will use `res.redirect` in the post request to send the page back to `/friends`. Which to the user simply adds the new friend to the list without them seeing anything else.
+
+## APIs
+* `curl` is a command-line action that gets the data back from a url. if you do `curl google.com` you'll get back all of the html that would normally fill the page. Just an example, not what we use.
+* to be able to make requests from an API, we need an npm package called `request`. so `npm install request --save`
+* The data that comes back from the API is JSON, so it's a string. Remember to use `JSON.parse(body)` to get actual data.
+* To use a form to use an api. The data sent by the API goes to the results page. we aren't posting, we are getting, which means the data isn't in the body, it's a query in the url. Instead of `req.body.{name}` we call `req.query.{name}`. Then in the get request, we can put that variable into the API url.
+
+
+### NPM Packages  
+Packages needed so far:
+
+* express
+* ejs
+* body-parser
+* request
