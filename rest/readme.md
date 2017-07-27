@@ -24,5 +24,5 @@ There are 7 restful Routes:
 |	Create	|	/dogs			|	POST		|	Create a new dog, then redirect		|
 |	Show	|	/dogs/:id		|	GET			|	Show info about single dog			|
 |	Edit	|	/dogs/:id/edit	|	GET			|	Show edit form for single dog		|
-|	Update	|	/dogs/:id		|	POST		|	Update a single dog, then redirect	|
+|	Update	|	/dogs/:id		|	PUT			|	Update a single dog, then redirect	|
 |	Destroy	|	/dogs/:id		|	DESTROY		|	Delete a single dog, then redirect	|
