@@ -49,3 +49,17 @@ MEAN Stack - Mongo / Express / Angular / Node
 	* Straight forward, will remove all objects that match.
 	* We can also use a modifier if wanted to only remove up to a certain number of objects
 		* `db.dogs.remove({breed: "Bernese"}).limit(1)`
+
+## Introduction to Mongoose
+* We don't write our mongo code in the shell, we write it in express using Mongoose.
+* So when adding campgrounds, instead of pushing to our array, we insert it into our collection
+* Mongoose is object modelling for MongoDB
+* Mongoose is to MongoDB kind of like jQuery is to the DOM
+* `npm install mongoose` and `var mongoose = require("mongoose")`
+* first we must connect to a DB, so `mongod` must be running.
+
+fix mongoose promise warning: `mongoose.Promise = global.Promise;`  
+- Sets mongoose's default promise library to javascripts native promise library
+
+Another possible error: `open() is deprecated in mongoose`  
+- To fix: `mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});` instead of standard mongoose.connect syntax.

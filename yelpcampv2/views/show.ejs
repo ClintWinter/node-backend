@@ -1,0 +1,19 @@
+<% include partials/header %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+		
+			<div class="jumbotron">
+				<h1><%=campground.name%></h1>
+				<p><%=campground.description%></p>
+			</div>
+			
+			<div class="col-xs-6 col-xs-offset-3">
+				<img class="img-responsive" src="<%=campground.image%>">
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<% include partials/footer %>
