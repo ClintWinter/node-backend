@@ -17,6 +17,8 @@ RESTFUL ROUTES
 
 Now we need comment routes, which ___WILL NOT___ look like this:
 
+|	NAME	|	URL				|	VERB	|
+|	---		|	---				|	---		|
 |	NEW 	| 	/comments/new 	|	GET		|
 |	CREATE 	| 	/comments 		|	POST 	|
 
