@@ -1,0 +1,32 @@
+<% include partials/header %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+		
+			<div class="jumbotron">
+				<h1><%=campground.name%></h1>
+				<p><%=campground.description%></p>
+			</div>
+			
+			<div class="col-xs-12 col-md-6 col-md-offset-3">
+				<img class="img-responsive" src="<%=campground.image%>">
+			</div>
+
+			<div class="col-xs-12 col-md-8 col-md-offset-2">
+				<ul id="comments" class="list-group">
+				<% campground.comments.forEach(function(comment) { -%>
+					<li class="list-group-item">
+						<blockquote>
+							<p><%=comment.text%></p>
+							<footer><%=comment.author%></footer>
+						</blockquote>
+					</li>
+				<% }); -%>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<% include partials/footer %>

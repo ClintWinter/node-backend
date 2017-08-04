@@ -1,0 +1,57 @@
+body {
+	min-height: 100%;
+	position: relative;
+	padding: 0; margin: 0;
+	box-sizing: border-box;
+	padding-bottom: 100px;
+}
+
+html {
+	height: 100%;
+	padding: 0; margin: 0;
+}
+
+main {
+	padding: 50px;
+	max-width: 990px;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	padding: 20px;
+
+	background-color: #e67e22;
+	color: white;
+}
+
+.campgrounds {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.thumbnail {
+	text-align: center;
+}
+
+.campgrounds-new h1 {
+text-align: center;
+}
+
+.campgrounds-form {
+	width: 30%;
+	margin: 30px auto 0;
+}
+
+#comments {
+	margin: 25px 0;
+}
+
+#comments li {
+
+}
