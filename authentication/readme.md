@@ -10,7 +10,7 @@
 * Discuss sessions
 	* Express-Session
 
-We will use *PassportJS* - [passportjs.org](PassportJS)  
+We will use *PassportJS* - [PassportJS](http://www.passportjs.org)  
 We will also use *passport-local*, which is for a simple username and password, but we can also use PassportJS to add logins for google, facebook, twitter, etc.  
 Lastly we will use *passport-local-mongoose*, which will help us work with mongoose.  
 
