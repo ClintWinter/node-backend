@@ -9,9 +9,9 @@
 _REST(Representational State Transfer) - a mapping between HTTP routes and CRUD_  
 
 **C**reate  
-**R**ead
-**U**pdate
-**D**estroy  
+**R**ead  
+**U**pdate  
+**D**estroy   
 
 REST is good because it's a predictable pattern. Sort of like an industry standard.
 
