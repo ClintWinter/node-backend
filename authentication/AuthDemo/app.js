@@ -45,18 +45,19 @@ app.get("/register", function(req, res) { // show sign up form
 app.post("/register", function(req, res) {
 	User.register(
 		new User({
-		username: req.body.username
-	}), 
-	req.body.password,
-	function(err, user) {
-		if (err) {
-			console.log(err);
-			return res.render("register");
+			username: req.body.username
+		}), 
+		req.body.password,
+		function(err, user) {
+			if (err) {
+				console.log(err);
+				return res.render("register");
+			}
+			passport.authenticate("local")(req, res, function() {
+				res.redirect("/secret");
+			});
 		}
-		passport.authenticate("local")(req, res, function() {
-			res.redirect("/secret");
-		});
-	});
+	);
 });
 
 // login routes

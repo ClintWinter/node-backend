@@ -90,18 +90,19 @@ We create a register route/view page with a form to submit a new user. The form 
 app.post("/register", function(req, res) {
 	User.register(
 		new User({
-		username: req.body.username
-	}), 
-	req.body.password,
-	function(err, user) {
-		if (err) {
-			console.log(err);
-			return res.render('register');
+			username: req.body.username
+		}), 
+		req.body.password,
+		function(err, user) {
+			if (err) {
+				console.log(err);
+				return res.render("register");
+			}
+			passport.authenticate("local")(req, res, function() {
+				res.redirect("/secret");
+			});
 		}
-		passport.authenticate("local")(req, res, function() {
-			res.redirect("/secret");
-		});
-	}});
+	);
 });
 ```
 
