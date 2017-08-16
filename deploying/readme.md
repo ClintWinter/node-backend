@@ -6,7 +6,7 @@ For this example we use heroku.
 
 Make sure our package.json has all of our saved dependencies because when we put our application on a host like heroku, they will run `npm install` and pull all the dependencies in that are needed to run the app.
 
-Create a heroku account, then download the heroku CLI that is in the (getting started guide)[https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up] for node.  
+Create a heroku account, then download the heroku CLI that is in the [getting started guide](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up) for node.  
 
 Once that's done, start with `$ heroku login` and give your email/password.
 
@@ -19,7 +19,7 @@ To see errors, run `$ heroku logs --tail`. The error you should see is "ERR! mis
 ```json
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"i
+    "start": "node app.js"
   },
 ```
 
@@ -27,5 +27,3 @@ Then we add the changes to master FIRST! `$ git add -A` then `$ git commit -m "c
 Now we can push the master changes to heroku: `$ git push heroku master`.
 
 You can also open the app using `$ heroku open`.
-
-**_NOTE: Using variables from an outside untracked file won't work. Not sure the optimal way to do it yet, but you can set config vars for heroku with `heroku config:set Var=something`. And use process.env.VAR in the file. Then for local you can use a package called `node-env-file` that will pull variables you set in a .env file by requiring it and then doing `env(__dirname + '/.env');` to get them._**
